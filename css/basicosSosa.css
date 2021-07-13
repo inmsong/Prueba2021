@@ -1,0 +1,975 @@
+/*===============================================================*/
+/*	INDICE	*/
+/*===============================================================*/
+/*
+1.- FONTS
+2.- RESET INPUTS IPHONE
+3.- EFECTO TRANSICION
+4.- EFECTO TRANSICION BACKGROUND
+5.-
+6.-fayer
+7.-
+8.-
+9.-
+10.-
+11.-
+12.-
+13.-
+*/
+.claseEjemplo{
+		width: 100%;
+		float: left;
+		position: relative;
+		border: 1px solid lime;
+	}
+/*====================================*/
+/*	FONTS	*/
+/*====================================*/
+@font-face {
+    font-family: 'HelveticaNeue-Light';
+    src: url('/fonts/3410B6_0_0.eot');
+    src: url('/fonts/3410B6_0_0.eot?#iefix') format('embedded-opentype'), url('/fonts/3410B6_0_0.woff2') format('woff2'), url('/fonts/3410B6_0_0.woff') format('woff'), url('/fonts/3410B6_0_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue-LightIt';
+    src: url('/fonts/3410B6_1_0.eot');
+    src: url('/fonts/3410B6_1_0.eot?#iefix') format('embedded-opentype'), url('/fonts/3410B6_1_0.woff2') format('woff2'), url('/fonts/3410B6_1_0.woff') format('woff'), url('/fonts/3410B6_1_0.ttf') format('truetype');
+}
+
+@font-face {
+    /*font-family: 'HelveticaNeue-Roman';*/
+	font-family: 'HelveticaNeue-Regular';
+    src: url('/fonts/3410B6_2_0.eot');
+    src: url('/fonts/3410B6_2_0.eot?#iefix') format('embedded-opentype'), url('/fonts/3410B6_2_0.woff2') format('woff2'), url('/fonts/3410B6_2_0.woff') format('woff'), url('/fonts/3410B6_2_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue-LightRegularIt';
+    src: url('/fonts/3410B6_3_0.eot');
+    src: url('/fonts/3410B6_3_0.eot?#iefix') format('embedded-opentype'), url('/fonts/3410B6_3_0.woff2') format('woff2'), url('/fonts/3410B6_3_0.woff') format('woff'), url('/fonts/3410B6_3_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue-Bold';
+    src: url('/fonts/3410B6_4_0.eot');
+    src: url('/fonts/3410B6_4_0.eot?#iefix') format('embedded-opentype'), url('/fonts/3410B6_4_0.woff2') format('woff2'), url('/fonts/3410B6_4_0.woff') format('woff'), url('/fonts/3410B6_4_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue-Medium';
+    src: url('/fonts/3410B6_5_0.eot');
+    src: url('/fonts/3410B6_5_0.eot?#iefix') format('embedded-opentype'), url('/fonts/3410B6_5_0.woff2') format('woff2'), url('/fonts/3410B6_5_0.woff') format('woff'), url('/fonts/3410B6_5_0.ttf') format('truetype');
+}
+/*====================================*/
+/*	MOSTRAR INFO OCULTA	*/
+/*====================================*/
+<section class="verMasInfo">
+		<div class="container">
+			<div class="infoCuentas">
+				<p>
+					Tasa ordinaria variable para pagos en Comercios: TIIE + 15 puntos porcentuales. Tasa ordinaria variable para Disposiciones en Efectivo: TIIE + 20 puntos porcentuales. Anualidad: Primer anualidad sin costo, a partir del segundo año en adelante se cobrará
+					una anualidad de $500 pesos. CAT promedio 22.3% sin IVA, tasa variable. Para una línea de crédito de $35,000, M.N. y una Tasa Anual de Interés Promedio Ponderada 19.4% más IVA. Costo Anual Total Informativo calculado a un periodo de un año
+					al 3 de junio 2014.
+				</p>
+			</div>
+			<div class="infoOculta" style="display:none;">
+				<p>
+					* El CAT (Costo Anual Total) es para fines informativos. Aplica para toda la República Mexicana. Todos los montos son en Moneda Nacional. ** Para mayor información de los beneficios, servicios y coberturas de su Tarjeta MasterCard ingrese a www.mastercard.com/mx/gateway.html
+					*** Para mayor información de los beneficios, servicios y coberturas de su Tarjeta Visa ingrese a http://lac.visa.com/home.jsp?country=mx CAT: Costo Anual Total. PYME: Pequeña y Mediana Empresa. TIIE: Tasa de Interés Interbancaria de Equilibrio.
+					Aplican Restricciones. Sujeto a aprobación de crédito. La presente información se encuentra sujeta a cambios sin previo aviso. Aplica para contrataciones en los estados en que Afirme tenga presencia. El uso de cajeros automáticos de otra institución
+					bancaria puede generar cargos adicionales. Al disponer tu crédito a través del servicio de Afirmenet, se puede generar un costo adicional dependiendo del plan seleccionado. Consulta las condiciones y beneficios de Afirmenet.
+				</p>
+			</div>
+			<div class="lnkInfoCuentas vermas">
+				<a>Ver mas
+				<h6></h6>
+			</a>
+
+			</div>
+		</div>
+</section>
+<script type="text/javascript">
+	/* VER MENÚ */
+	jQuery(function() {
+		jQuery(".lnkInfoCuentas").bind("click", function() {
+			jQuery(this).text(jQuery(this).text() == "Ver Menos" ? "Ver mÃ¡s" : "Ver Menos");
+			$(".lnkInfoCuentas").toggleClass("vermas verMenos");
+			jQuery(this).prev().slideToggle();
+		});
+	});
+</script>
+/*====================================*/
+/*	MENU CHINGON	*/
+/*====================================*/
+<header>
+	<div class="menuAfirme" style="display:block;">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img src="images/logoAfirme.png"/>
+					</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<!--li class="active"><a href="#">Personas</a></li-->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personas <span class="caret"></span></a>
+							<ul class="dropdown-menu dropdownIcons">
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-4 col-sm-3 col-sm-2">
+											<li>
+												<a href="#">
+													<div class="iconMenu">
+														<img src="images/icnCreditoPersHvr.png" />
+													</div>
+													<div class="ttlIconMenu">
+														<h3>Lorem ipsum dolor</h3>
+													</div>
+												</a>
+											</li>
+										</div>
+
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Patrimonial <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PyMe <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empresas <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+							</ul>
+						</li>
+						<div class="contUserTools">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									<img src="images/icnChat2.png"/>
+									<span class="caret">
+									</span>
+								</a>
+								<ul class="dropdown-menu backGrey">
+									<li>
+										<div class="itemContacto">
+											<div class="icnContacto">
+												<img src="images/icnPhoneBco.svg" />
+											</div>
+											<div class="infoCont">
+												<a class="telAf" href="tel:+ 01 800 22 347663">01 800 22 347663</a>
+												<a href="tel:+ 01 800 22 347663" class="txtRegular">01 800 22 347663</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="itemContacto">
+											<div class="icnContacto">
+												<img src="images/icnMailBco.svg" />
+											</div>
+											<div class="infoCont">
+												<h4>Enviar correo</h4>
+												<a href="mailto:info@afirme.com" class="txtRegular">info@afirme.com</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="itemContacto">
+											<div class="icnContacto">
+												<img src="images/icnChatBco.svg" />
+											</div>
+											<div class="infoCont">
+												<h4>Chat</h4>
+												<p class="txtRegular">Online</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/icnLocation.svg"/>
+								</a>
+							</li>
+							<li>
+								<a id="buscador" class="seach_btn_menu">
+									<img src="images/icnSearch.svg"/>
+								</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									<img src="images/icnIngresar.svg"/>
+									<span class="caret">
+									</span>
+								</a>
+								<div class="dropdown-menu contIngresar">
+									<div class="contInfo" data-toggle="tooltip" title="Some tooltip text!">
+										<img src="images/icnAyuda.svg" />
+										<p>AfirmeNet</p>
+									</div>
+									<div class="contInput">
+										<input type="text" placeholder="No. de Cliente">
+									</div>
+									<div class="contInput">
+										<input type="submit" value="Ingresar">
+									</div>
+								</div>
+							</li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- BUSCADOR -->
+		<div class="seach_up">
+			<a id="buscador" class="search_btn_menu">
+				<img src="/images/Buscador.svg"/>
+			</a>
+		</div>
+	</div>
+</header>
+
+/******************************************************************************/
+/* CAMBIAR PADDING DE COLUMNAS  */
+@media (max-width: 768px)
+{
+  div[class^="col"]{padding-left:5px; padding-right:5px;}
+}
+/******************************************************************************/
+/* RESET INPUTS IPHONE */
+input[type=date],
+input[type=number],
+input[type=email],
+input[type=text],
+input[type=button],
+input[type=submit],
+textarea
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	 -webkit-border-radius:0px;
+}
+/******************************************************************************/
+/* ESTILO TOOLTIP */
+@media only screen and (min-width: 320px) {
+	.showDesktop {
+		display: none
+	}
+	.showMobile {
+		display: block
+	}
+}
+@media only screen and (min-width: 768px) {
+	.showDesktop {
+		display: block
+	}
+	.showMobile {
+		display: none
+	}
+}
+/******************************************************************************/
+/* ESTILO TOOLTIP */
+.red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
+.red-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#f00; }
+/******************************************************************************/
+/* DESHABILITAR LINKS */
+.active {
+      pointer-events: none;
+      cursor: default;
+   }
+/******************************************************************************/
+/* CANCEL FOCUS */
+*:focus {
+  outline:none;
+}
+/******************************************************************************/
+/* QUITAR COLOR DE AUTOCOMPLETE */
+input[type=text],
+input[type=password]
+	{
+		-webkit-box-shadow: 0 0 0 30px #fff inset;
+		-moz-box-shadow: 0 0 0 30px #fff inset;
+		-ms-box-shadow: 0 0 0 30px #fff inset;
+		-o-box-shadow: 0 0 0 30px #fff inset;
+		box-shadow: 0 0 0 30px #fff inset;
+	}
+/******************************************************************************/
+/* EFECTO TRANSICION */
+.transitionBtn{
+  transition: background-color 300ms ease-out;
+}
+.transitionAll{
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+/* EFECTO TRANSICION BACKGROUND */
+.transitionBack {
+    background: #D2171F;
+    color: #fff;
+    -webkit-transition: background 1s;
+    transition: background 1s;
+    box-shadow: 0px 0px 10px 1px rgba(51, 51, 51, 0.7);
+}
+/******************************************************************************/
+/* ESTILOS DROPDOWN - SELECT */
+.styled-select select {
+background: transparent;
+ width: 222px;
+ padding: 5px;
+ font-size: 12px;
+ line-height: 1;
+ border-radius: 4px;
+ border: 0;
+ border-radius: 0;
+ height: 22px;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ -ms-appearance: none;
+ -o-appearance: none;
+ appearance: none;
+}
+.styled-select {
+ width: 222px;
+ height: 22px;
+ overflow: hidden;
+ background: url(../imagenes/tuimagen.png) no-repeat right #f6f6f6;
+ border-radius: 4px;
+ border: 1px solid #ccc;
+ position:absolute;
+ top: 204px;
+ left: 6px;
+}
+/******************************************************************************/
+/* SELECT CON VALIDACION (REQUIERE PLUGIN jqueryvalidation.org)*/
+<div class="col-sm-4 col-md-4 col-lg-4">
+	<div class="contElementInput form-group">
+		<label class="control-label hideLabel">Año*</label>
+		<div class="contInput">
+			<select id="marca" name="marca" required="" aria-required="true">
+				<option value=""></option>
+				<option value="2018">2018</option>
+				<option value="2017">2017</option>
+				<option value="2016">2016</option>
+				<option value="2015">2015</option>
+				<option value="2014">2014</option>
+			</select>
+		</div>
+	</div>
+</div>
+/******************************************************************************/
+/* Center*/
+.Center,.center{
+	float:left;
+	left:50%;
+	position:relative;
+	-webkit-transform:translate(-50%);
+	-moz-transform:translate(-50%);
+	-ms-transform:translate(-50%);
+	-o-transform:translate(-50%);
+	transform:translate(-50%);
+}
+/********************/
+/* Center con table*/
+.centerTable {
+  display: table;
+  margin: 0 auto;
+}
+/********************/
+/* Center Vertical*/
+.centerAlt {
+	display: table-cell;
+	vertical-align: middle;
+}
+/***********************/
+/* Doble Center*/
+.dobleCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/* Para el div hijo */
+.btnYellow {
+    width: auto;
+    float: left;
+    position: relative;
+    margin: 0 10px;
+}
+/***********************/
+/* MASCARA COLOR - OVERLAY	*/
+#sliderHome li:before {
+    position: absolute;
+    content: '';
+    background-color: #242a2d;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .55;
+}
+/***********************/
+/* HOVER IMAGEN */
+#elemento a:hover img {
+  background: #242a2d;
+  opacity: .55;
+}
+/******************************************************************************/
+/* TRIANGULO CON PROPIEDAD CLIP */
+.triangulo {
+    width: 200px;
+    height: 200px;
+    background: url(https://goo.gl/BeSyyD);
+
+    /* The points are: centered top, left bottom, right bottom */
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+/******************************************************************************/
+/* Evitar que el padding y border afecten al ancho de una caja */
+.contBody .containerTable .contTable .id {
+	width: 5vw!important;
+	border: 1px solid red;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-sizing: padding-box;
+	-moz-box-sizing: padding-box;
+	box-sizing: padding-box;
+
+}
+/******************************************************************************/
+/* ROMBO */
+.rombo {
+     width: 100px;
+     height: 100px;
+     border: 3px solid #555;
+     background: #428bca;
+     -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     -o-transform: rotate(45deg);
+     transform: rotate(45deg);
+}
+/******************************************************************************/
+/* Comillas con estilo*/
+/* Para que funcione hay que meter el contenedor en una etiqueta <blockquote> */
+blockquote:before {
+	width: 15%;
+    content: open-quote;
+    font-size: 90px;
+    float: left;
+    color: #999999;
+    opacity: .25;
+    position: relative;
+    font-style: italic;
+    line-height: .8;
+}
+/*blockquote:after {
+  content: close-quote;
+}*/
+blockquote {
+  quotes: "\201C" '"';
+}
+
+/******************************************************************************/
+/* PLACEHOLDER */
+/* PLACEHOLDER TODOS LOS NAVEGADORES */
+::placeholder {
+	color: rgba(179, 179, 179, 0.5);
+	font-size: 12px;
+}
+:-ms-input-placeholder {
+	color: rgba(179, 179, 179, 0.5);
+	font-size: 12px;
+}
+/* IE 10+ */
+::-webkit-input-placeholder {
+	color: rgba(179, 179, 179, 0.5);
+	font-size: 12px;
+}
+/* WebKit */
+::-moz-placeholder {
+	color: rgba(179, 179, 179, 0.5);
+	font-size: 12px;
+}
+/* OK */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+	-webkit-text-security: none;
+    color: #fff;
+    pointer-events: none;
+    font-size: 14px;
+    line-height: 1.4;
+}
+/******************************************************************************/
+/* PLACEHOLDER SELECT */
+.contInput.selectFechaAlt select {
+					color: #B3B3B3; /* default unselected color */
+	}
+
+	/*.contInput.selectFechaAlt select:focus {
+					color: lime;
+	}*/
+
+	.contInput.selectFechaAlt option:checked{
+					color: #333333; /* color when selected but not focused */
+	}
+/******************************************************************************/
+/* FOCUS */
+input [type='text']:focus,
+input [type='password']:focus,
+input [type='email']:focus,
+input [type='number']:focus,
+input [type='tel']:focus,
+input [type='url']:focus,
+textarea:focus {
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #fff;
+    box-shadow: 0 0 5px #cacaca;
+    transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+
+/******************************************************************************/
+/* ESTADOS INPUTS  */
+
+/* FOCUS INPUTS */
+.campo.placeholder  input[type=text]:focus{
+	font-size: 25.0px;
+	border-bottom:2px solid #008d42!important;
+}
+.campo.placeholder  input[type=text]:focus + p{
+	color:#008d42!important;
+}
+/* ACTIVE INPUTS */
+.campo.placeholder  input[type=text]:active{
+	border-bottom:2px solid magenta!important;
+}
+.campo.placeholder  input[type=text]:active + p{
+	color:magenta!important;
+}
+/* VISITED INPUTS */
+.campo.placeholder  input[type=text]:valid{
+	border-bottom:2px solid #009639!important;
+}
+.campo.placeholder  input[type=text]:valid + p{
+	color:#009639!important;
+}
+/******************************************************************************/
+/* SELECTORES AVANZADOS
+https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048
+*/
+.nombreClase:nth-child(1) {
+
+
+}
+/******************************************************************************/
+/* MAPA RESPONSIVE */
+.google-maps {
+position: relative;
+padding-bottom: 75%; // This is the aspect ratio
+height: 0;
+overflow: hidden;
+}
+.google-maps iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100% !important;
+height: 100% !important;
+}
+/******************************************************************************/
+/* SAME HEIGHT TO WIDTH */
+http://jsfiddle.net/n6DAu/1/
+
+.wrap{
+    width:300px;
+    height:400px;
+    border:1px solid red;
+}
+
+.child{
+    width:60%;
+    border:1px solid blue;
+}
+
+<div class="wrap">
+    <div class="child"></div>
+</div>
+
+/* JS */
+var cw = $('.child').width();
+$('.child').css({
+    'height': cw + 'px'
+});
+
+/*====================================*/
+/*	RADIO BUTTON	*/
+/*====================================*/
+<div class="col-sm-4 col-md-4 col-lg-3">
+	<div class="inputRadio">
+		<div class="radioBtn">
+			<label>
+				<input name="size" value="Micro" type="radio">
+				<span>Micro</span>
+			</label>
+		</div>
+		<div class="radioBtn">
+			<label>
+				<input name="size" value="Mediana" type="radio">
+				<span>Mediana</span>
+			</label>
+		</div>
+		<div class="radioBtn">
+			<label>
+				<input name="size" value="pequeña" type="radio">
+				<span>pequeña</span>
+			</label>
+		</div>
+		<div class="radioBtn">
+			<label>
+				<input name="size" value="Grande" type="radio">
+				<span>Grande</span>
+			</label>
+		</div>
+	</div>
+</div>
+/* ESTILO */
+input[type="radio"] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+	}
+	.radioBtn {
+		width: 100%;
+		float: left;
+		position: relative;
+		margin-bottom: 10px;
+		border: 1px solid red;
+	}
+	.radioBtn label {
+		width: 100%;
+		height: 100%;
+		float: left;
+		position: relative;
+		cursor: pointer;
+	}
+	.radioBtn input[type="radio"] {
+		width: 15px;
+		height: 15px;
+		float: left;
+		position: relative;
+		border: 1px solid #009DD1;
+	}
+	.radioBtn input[type="radio"]:checked {
+		background-color:#009DD1;
+	}
+  .radioBtn input[type="radio"]:hover + span {
+		color: #000;
+		opacity: 1;
+	}
+  .radioBtn input[type="radio"]:checked + span {
+		color: #000;
+		opacity: 1;
+	}
+	.radioBtn label span {
+		width: auto;
+		font-weight: 500;
+		float: left;
+		height: 100%;
+		text-align: left;
+		opacity: 0.6;
+		font-family: Intro-Regular;
+		font-size: 16px;
+		color: #4A4A4A;
+		letter-spacing: 0;
+		margin-left: 10px;
+	}
+/*====================================*/
+/*	EQUAL HEIGHT BOOTSTRAP	*/
+/*====================================*/
+
+.equalH{
+	border: 1px solid lime;
+	float: left;
+	position: relative;
+	width: 100%;
+}
+<script>
+$( document ).ready(function() {
+    var heights = $(".equalH").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".equalH").height(maxHeight);
+});
+
+</script>
+/*====================================*/
+/*	BUSCADOR 	*/
+/*====================================*/
+ 	/* ELEMENTO EN MENU */
+	<a id="buscador" class="search_btn_menu">
+		<img src="/images/icnBusca.png">
+		<!--span>Buscar</span-->
+	</a>
+	/* ELEMENTO OCULTO */
+  <div class="seach_up searchCofoce">
+		<a id="buscador" class="search_btn_menu">
+			<img src="/images/Buscador.svg" />
+		</a>
+	</div>
+
+<script>
+  /* Buscador*/
+  $("#buscador").click(function() {
+    $(".seach_up").slideToggle();
+  });
+</script>
+/*====================================*/
+/*	CAMBIAR BOTON A VIDEO 	*/
+/*====================================*/
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	<div id="videoHome" class="video" style="padding-top:20px;">
+		<iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" width="100%" height="315" src="https://www.youtube.com/embed/yKQKa73wyDk?autoplay=0&amp;rel=0&amp;showinfo=0&amp;loop=1&amp;controls=1&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fwww.cofoce.gob.mx&amp;widgetid=1"></iframe>
+		<button id="btnPlay" class="start-video" style="background-image: url();">
+			<img src="http://www.cofoce.gob.mx/images/btnPlay.png" alt="Play Video">
+		</button>
+	</div>
+</div>
+#btnPlay {
+	position: absolute;
+	width: 100%;
+	padding: 0;
+	left: 0;
+	border: none;
+	color: white;
+	text-shadow: 1px 1px 5px black, -1px -1px 5px black;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url("/media/1024/caso.jpg");
+	z-index: 999999;
+	height: 100%;
+	top: 0;
+}
+#btnPlay img {
+    width: auto;
+    padding-top: 0;
+}
+
+/*====================================*/
+/*	CIRCULOS CONECTADOS POR LINEA	*/
+/*====================================*/
+<div class="stepsForm">
+	<ul>
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</div>
+.stepsForm{
+}
+.stepsForm ul{
+}
+.stepsForm  li {
+	width: 2em;
+	height: 2em;
+	text-align: center;
+	line-height: 2em;
+	border-radius: 1em;
+	background: dodgerblue;
+	margin: 0 1em;
+	display: inline-block;
+	color: white;
+	position: relative;
+}
+.stepsForm  li::before{
+	content: '';
+	position: absolute;
+	top: .9em;
+	left: -4em;
+	width: 4em;
+	height: .2em;
+	background: dodgerblue;
+	z-index: -1;
+}
+.stepsForm  li:first-child::before {
+	display: none;
+}
+.stepsForm  .active {
+	background: dodgerblue;
+}
+.stepsForm  .active ~ li {
+	background: lightblue;
+}
+.stepsForm  .active ~ li::before {
+	background: lightblue;
+}
+
+/*====================================*/
+/*	OBTENER WIDTH DE ELEMENTO	*/
+/*====================================*/
+var mm = ($('.contBarraLoading').width());
+
+/*====================================================================================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+
+
+	/*==========  Mobile First Method  ==========*/
+
+	/* Custom, iPhone Retina */
+	@media only screen and (min-width : 320px){
+
+	}
+
+	/* Extra Small Devices, Phones */
+	@media only screen and (min-width : 480px){
+
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px){
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px){
+
+	}
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px){
+
+	}
+
+	/*==========  Non-Mobile First Method  ==========*/
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (max-width : 1200px){
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (max-width : 992px){
+
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (max-width : 768px){
+
+	}
+
+	/* Extra Small Devices, Phones */
+	@media only screen and (max-width : 480px){
+
+	}
+
+	/* Custom, iPhone Retina */
+	@media only screen and (max-width : 320px){
+
+	}
+
+
+/*******************************************************************************************/
+/* MEDIA QUERIES  FOUNDATION */
+/*******************************************************************************************/
+
+
+/***************************************************/
+/* SMALL SCREENS*/
+/***************************************************/
+
+/* Define mobile styles */
+@media only screen {
+
+}
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 40em) {
+
+}
+
+/***************************************************/
+/* MEDIUM SCREENS */
+/***************************************************/
+
+/* min-width 641px, medium screens */
+@media only screen and (min-width: 40.063em) {
+
+}
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+
+}
+
+/***************************************************/
+/* LARGE SCREENS */
+/***************************************************/
+
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) {
+
+}
+/* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+
+}
+
+/***************************************************/
+/* XLARGE SCREENS */
+/***************************************************/
+
+/* min-width 1441px, xlarge screens */
+@media only screen and (min-width: 90.063em) {
+
+}
+
+/* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+
+}
+
+/***************************************************/
+/* XXLARGE SCREENS */
+/***************************************************/
+
+ /* min-width 1921px, xxlarge screens */
+@media only screen and (min-width: 120.063em) {
+
+}
